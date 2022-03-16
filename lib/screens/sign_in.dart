@@ -4,8 +4,8 @@ import 'package:hello_app/app_text_field.dart';
 import 'package:hello_app/screens/jobs.dart';
 
 class SignIn extends StatelessWidget {
-  const SignIn({Key? key}) : super(key: key);
-
+  TextEditingController addJob = TextEditingController();
+  TextEditingController addDescribe = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,8 +32,14 @@ class SignIn extends StatelessWidget {
             SizedBox(
               height: 47,
             ),
-            AppTextField(placeHolder: 'Enter your email address'),
-            AppTextField(placeHolder: 'Enter your password'),
+            AppTextField(
+              placeHolder: 'Enter your email address',
+              textName: addJob,
+            ),
+            AppTextField(
+              placeHolder: 'Enter your password',
+              textName: addJob,
+            ),
             Spacer(),
             GestureDetector(
               onTap: () {

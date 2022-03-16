@@ -4,7 +4,8 @@ import 'package:hello_app/app_text_field.dart';
 import 'package:hello_app/utils.dart';
 
 class EditJob extends StatelessWidget {
-  const EditJob({Key? key}) : super(key: key);
+  TextEditingController editJob = TextEditingController();
+  TextEditingController editDescribe = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -41,15 +42,20 @@ class EditJob extends StatelessWidget {
             SizedBox(
               height: 11,
             ),
-            AppTextField(placeHolder: 'Flutter Developer'),
+            AppTextField(
+              placeHolder: 'Flutter Developer',
+              textName: editJob,
+            ),
             SizedBox(
               height: 28,
             ),
             Container(
                 height: 200,
                 child: AppTextField(
-                    placeHolder:
-                        'Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n Quis eget in lectus sit amet pellentesque eleifend tellus neque.\n Praesent sagittis ultricies volutpat turpis hendrerit nulla ultricies massa elementum.\n Convallis gravida enim erat enim commodo praesent malesuada facilisis. Potenti orci amet, dui nunc aliquet pellentesque sit nibh scelerisque.')),
+                  placeHolder:
+                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n Quis eget in lectus sit amet pellentesque eleifend tellus neque.\n Praesent sagittis ultricies volutpat turpis hendrerit nulla ultricies massa elementum.\n Convallis gravida enim erat enim commodo praesent malesuada facilisis. Potenti orci amet, dui nunc aliquet pellentesque sit nibh scelerisque.',
+                  textName: editDescribe,
+                )),
             Spacer(),
             AppButton(label: 'Update Job', onPress: () {})
           ],

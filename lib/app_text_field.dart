@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 
 class AppTextField extends StatelessWidget {
   final String placeHolder;
+  final TextEditingController textName;
 
-  const AppTextField({required this.placeHolder});
+  const AppTextField(
+      {Key? key, required this.placeHolder, required this.textName})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,6 +17,7 @@ class AppTextField extends StatelessWidget {
           borderRadius: BorderRadius.circular(15),
           border: Border.all(color: const Color(0xff5D5D67), width: 1)),
       child: TextField(
+        controller: textName,
         style: const TextStyle(color: Colors.white),
         decoration: InputDecoration(
             hintText: placeHolder,
